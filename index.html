@@ -38,7 +38,7 @@
         nav a:hover { color: var(--gold); }
         .nav-cta { background: var(--gold); color: #000 !important; padding: 0.55rem 1.3rem; border-radius: 4px; font-weight: 600; }
         .hero {
-            min-height: 100vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('Jesse_0007.jpg') center/cover no-repeat;
+            min-height: 100vh; background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url('Jesse_0027.jpg') center/cover no-repeat;
             display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 6% 4rem;
         }
         .hero-content h1 { font-size: clamp(3.2rem, 8vw, 6.5rem); font-weight: 700; line-height: 0.92; margin-bottom: 1rem; }
@@ -67,7 +67,22 @@
         .story-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
         .card { background: var(--bg-secondary); padding: 1.6rem; border-radius: 8px; border: 1px solid rgba(201,162,39,0.15); }
         .card h4 { color: var(--gold); margin-bottom: 0.6rem; font-size: 1.2rem; }
-        .achievements { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; max-width: 1100px; margin: 0 auto; }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(201,162,39,0.15);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover { transform: scale(1.02); }
         .achievement { background: var(--bg-secondary); padding: 2rem; border-radius: 8px; text-align: center; border: 1px solid rgba(201,162,39,0.12); }
         .achievement h4 { color: var(--gold); margin-bottom: 0.5rem; font-size: 1.35rem; }
         .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; max-width: 1100px; margin: 0 auto; }
@@ -141,8 +156,19 @@
                 <a href="https://www.youtube.com/@ProteinLevine" class="btn" target="_blank">Watch on YouTube</a>
             </div>
             <div>
-                <img src="Jesse_0041.jpg" alt="Protein Levine training" class="about-image">
+                <img src="Jesse_0179.jpg" alt="Protein Levine training" class="about-image">
             </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title">The <span>Work</span></h2>
+        <p class="section-subtitle">No filters. No excuses. Just the iron and the result.</p>
+        <div class="gallery">
+            <img src="Jesse_0050.jpg" alt="Back double bicep">
+            <img src="Jesse_0094.jpg" alt="Training intensity">
+            <img src="stage_shot.jpg" alt="Competition stage">
+            <img src="Jesse_0267.jpg" alt="Pull-up">
         </div>
     </section>
 
