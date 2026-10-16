@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Levine | 27 Years of Iron. Lifetime Natural. Zero Excuses.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --bg-secondary: #111111;
+            --gold: #c9a227;
+            --gold-light: #e8d48b;
+            --white: #f5f5f5;
+            --gray: #999;
+            --accent: #b91c1c;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            line-height: 1.7;
+        }
+        h1, h2, h3, .logo { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1.5px; }
+        nav {
+            position: fixed; top: 0; width: 100%; background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(12px); z-index: 1000; padding: 1rem 6%;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(201,162,39,0.25);
+        }
+        .logo { font-size: 1.7rem; font-weight: 700; color: var(--gold); }
+        .logo span { color: var(--white); }
+        nav ul { display: flex; list-style: none; gap: 2.2rem; }
+        nav a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: var(--gold); }
+        .nav-cta { background: var(--gold); color: #000 !important; padding: 0.55rem 1.3rem; border-radius: 4px; font-weight: 600; }
+        .hero {
+            min-height: 100vh; background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('hero.jpg') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 6% 4rem;
+        }
+        .hero-content h1 { font-size: clamp(3.2rem, 8vw, 6.5rem); font-weight: 700; line-height: 0.92; margin-bottom: 1rem; }
+        .hero-content h1 span { color: var(--gold); }
+        .hero-subtitle { font-size: clamp(1.05rem, 2.2vw, 1.45rem); color: var(--gold-light); margin-bottom: 2.5rem; font-weight: 500; letter-spacing: 0.5px; }
+        .hero-stats { display: flex; justify-content: center; gap: 3.5rem; margin: 2.5rem 0 3rem; flex-wrap: wrap; }
+        .stat-number { font-family: 'Oswald', sans-serif; font-size: 2.6rem; color: var(--gold); font-weight: 700; }
+        .stat-label { font-size: 0.85rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1.2px; }
+        .btn {
+            display: inline-block; padding: 1rem 2.4rem; background: var(--gold); color: #000;
+            text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+            border-radius: 4px; margin: 0.4rem; transition: all 0.3s;
+        }
+        .btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+        .btn-outline { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+        .btn-outline:hover { background: var(--gold); color: #000; }
+        section { padding: 6.5rem 6%; }
+        .section-title { font-size: clamp(2.4rem, 5vw, 3.8rem); text-align: center; margin-bottom: 0.8rem; }
+        .section-title span { color: var(--gold); }
+        .section-subtitle { text-align: center; color: var(--gray); max-width: 720px; margin: 0 auto 3.5rem; font-size: 1.08rem; }
+        .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .about-text h3 { font-size: 2.1rem; margin-bottom: 1.4rem; color: var(--gold); }
+        .about-text p { margin-bottom: 1.4rem; color: #ddd; }
+        .quote { border-left: 4px solid var(--gold); padding-left: 1.4rem; font-style: italic; font-size: 1.25rem; color: var(--gold-light); margin: 2rem 0; }
+        .story-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+        .card { background: var(--bg-secondary); padding: 1.6rem; border-radius: 8px; border: 1px solid rgba(201,162,39,0.15); }
+        .card h4 { color: var(--gold); margin-bottom: 0.6rem; font-size: 1.2rem; }
+        .achievements { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; max-width: 1100px; margin: 0 auto; }
+        .achievement { background: var(--bg-secondary); padding: 2rem; border-radius: 8px; text-align: center; border: 1px solid rgba(201,162,39,0.12); }
+        .achievement h4 { color: var(--gold); margin-bottom: 0.5rem; font-size: 1.35rem; }
+        .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; max-width: 1100px; margin: 0 auto; }
+        .product-card { background: var(--bg-secondary); border-radius: 8px; overflow: hidden; border: 1px solid rgba(201,162,39,0.15); text-align: center; }
+        .product-placeholder { height: 180px; background: linear-gradient(135deg, #1a1a1a, #252525); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; color: var(--gold); }
+        .product-info { padding: 1.4rem; }
+        .price { color: var(--gold); font-weight: 600; font-size: 1.15rem; margin: 0.4rem 0 1rem; }
+        .cta-banner { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('1VkQu.jpg') center/cover; text-align: center; padding: 7rem 6%; }
+        .cta-banner h2 { font-size: clamp(2.8rem, 6vw, 5rem); margin-bottom: 1rem; }
+        footer { background: #050505; padding: 3.5rem 6% 2.5rem; text-align: center; border-top: 1px solid rgba(201,162,39,0.2); }
+        .socials { display: flex; justify-content: center; gap: 1.8rem; margin: 1.5rem 0; }
+        .socials a { color: var(--gold); font-size: 1.4rem; text-decoration: none; }
+        .footer-links a { color: var(--gray); margin: 0 1rem; text-decoration: none; }
+        .footer-links a:hover { color: var(--gold); }
+        @media (max-width: 900px) {
+            nav ul { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .story-cards { grid-template-columns: 1fr; }
+            .hero-stats { gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">PROTEIN <span>LEVINE</span></div>
+        <ul>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#content">Content</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="https://proteinlevine.com" class="nav-cta" target="_blank">Shop Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>PROTEIN<br><span>LEVINE</span></h1>
+            <p class="hero-subtitle">27 Years of Iron. Lifetime Natural. Zero Excuses.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">27+</div>
+                    <div class="stat-label">Years Training</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">Top 5</div>
+                    <div class="stat-label">Physique Placer</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">AKA</div>
+                    <div class="stat-label">Above Knee Amputee</div>
+                </div>
+            </div>
+            <a href="#story" class="btn">The Story</a>
+            <a href="https://proteinlevine.com" class="btn btn-outline" target="_blank">Shop the Grind</a>
+        </div>
+    </section>
+
+    <section id="story">
+        <h2 class="section-title">The <span>Story</span></h2>
+        <p class="section-subtitle">Resilience isn’t built in comfort. It’s forged under iron, through pain, and with zero excuses.</p>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Above-Knee Amputee. Lifetime Natural. Still Grinding.</h3>
+                <p>In July 2004, a car accident took my right leg and nearly took my life. A stranger used his belt as a tourniquet. Days in a coma. Years learning to walk again while fighting chronic osteomyelitis.</p>
+                <p>Instead of stopping, I turned pain into power. Over 27 years of natural bodybuilding. Consistent Top 5 placer in Men’s Physique. Adaptive athlete with osseointegration. Daily antibiotics. Zero excuses.</p>
+                <div class="quote">
+                    “Don’t talk about it. Be about it.”<br>
+                    “You didn’t break. You kept going. That’s the real superpower.”
+                </div>
+                <p>This isn’t just about muscle. It’s about the mental battle. Showing up when it’s easier to stay down. Building a physique and a life that lasts—no matter what life throws at you.</p>
+                <a href="https://www.youtube.com/@ProteinLevine" class="btn" target="_blank">Watch on YouTube</a>
+            </div>
+            <div class="story-cards">
+                <div class="card">
+                    <h4>2004</h4>
+                    <p>Car accident. Above-knee amputation. The start of the comeback.</p>
+                </div>
+                <div class="card">
+                    <h4>Osseointegration</h4>
+                    <p>Direct bone-anchored prosthetic. Freedom of movement. Still training hard.</p>
+                </div>
+                <div class="card">
+                    <h4>Natural Competitor</h4>
+                    <p>Top 5 placer for the last 10+ years. No shortcuts. Ever.</p>
+                </div>
+                <div class="card">
+                    <h4>Still Fighting</h4>
+                    <p>Chronic osteomyelitis. Daily antibiotics. The grind continues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" style="background: var(--bg-secondary);">
+        <h2 class="section-title">The <span>Record</span></h2>
+        <p class="section-subtitle">Experience-based results. No hype. Just the work.</p>
+        <div class="achievements">
+            <div class="achievement">
+                <h4>27+ Years</h4>
+                <p>Lifetime natural training. Consistent, year after year.</p>
+            </div>
+            <div class="achievement">
+                <h4>Top 5 Placer</h4>
+                <p>Men’s Physique competitor. Last 10+ years.</p>
+            </div>
+            <div class="achievement">
+                <h4>Adaptive Athlete</h4>
+                <p>Above-knee amputee with osseointegration. Still competing.</p>
+            </div>
+            <div class="achievement">
+                <h4>Zero Excuses</h4>
+                <p>Chronic osteomyelitis. Daily antibiotics. Still showing up.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop">
+        <h2 class="section-title">Shop the <span>Grind</span></h2>
+        <p class="section-subtitle">Bread & Butter merch. Lift Heavy. Eat Protein. Rep the unbreakable life.</p>
+        <div class="shop-grid">
+            <div class="product-card">
+                <div class="product-placeholder">☕</div>
+                <div class="product-info">
+                    <h4>Bread & Butter Barbell Mug</h4>
+                    <p class="price">From $8.95</p>
+                    <a href="https://proteinlevine.com/products/bread-butter-barbell-mug-gym-fuel-motivation-coffee-cup" class="btn" target="_blank">Shop</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-placeholder">👕</div>
+                <div class="product-info">
+                    <h4>Bread & Butter Muscle Shirt</h4>
+                    <p class="price">$23.00</p>
+                    <a href="https://proteinlevine.com/products/bread-butter-muscle-shirt-lift-heavy-eat-protein" class="btn" target="_blank">Shop</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-placeholder">👕</div>
+                <div class="product-info">
+                    <h4>No Chest on Monday Tee</h4>
+                    <p class="price">From $19.99</p>
+                    <a href="https://proteinlevine.com/products/unisex-classic-tee" class="btn" target="_blank">Shop</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-placeholder">👕</div>
+                <div class="product-info">
+                    <h4>PL Signature T-Shirt</h4>
+                    <p class="price">From $15.50</p>
+                    <a href="https://proteinlevine.com/products/unisex-t-shirt" class="btn" target="_blank">Shop</a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://proteinlevine.com" class="btn" target="_blank">View Full Shop</a>
+            <p style="margin-top: 1rem; color: var(--gray);">Free Shipping on Orders Over $70</p>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <h2>ZERO<br>EXCUSES</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--gold-light);">Forge Your Strength. No Matter What.</p>
+        <a href="https://www.youtube.com/@ProteinLevine" class="btn" target="_blank">Subscribe on YouTube</a>
+        <a href="https://proteinlevine.com" class="btn btn-outline" target="_blank">Shop Merch</a>
+    </section>
+
+    <section id="content">
+        <h2 class="section-title">Real Talk <span>Motivation</span></h2>
+        <p class="section-subtitle">Adaptive workouts. No-BS mindset. Experience-based training from someone who has lived it.</p>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <p style="margin-bottom: 2rem; font-size: 1.08rem;">Follow the journey: daily motivation, training videos, competition prep, and the unfiltered truth about building a physique that lasts.</p>
+            <a href="https://www.youtube.com/@ProteinLevine" class="btn" target="_blank">YouTube Channel</a>
+            <a href="https://www.instagram.com/proteinlevine/" class="btn btn-outline" target="_blank">Instagram</a>
+            <a href="https://x.com/proteinlevine" class="btn btn-outline" target="_blank">X</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo" style="font-size: 1.9rem; margin-bottom: 1rem;">PROTEIN <span>LEVINE</span></div>
+        <p>27 Years of Iron. Lifetime Natural. Above-Knee Amputee.</p>
+        <div class="socials">
+            <a href="https://www.youtube.com/@ProteinLevine" target="_blank">▶</a>
+            <a href="https://www.instagram.com/proteinlevine/" target="_blank">📸</a>
+            <a href="https://x.com/proteinlevine" target="_blank">𝕏</a>
+            <a href="https://proteinlevine.com" target="_blank">🛒</a>
+        </div>
+        <div class="footer-links">
+            <a href="https://proteinlevine.com" target="_blank">Shop</a>
+            <a href="https://www.youtube.com/@ProteinLevine" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/proteinlevine/" target="_blank">Instagram</a>
+            <a href="https://x.com/proteinlevine" target="_blank">X</a>
+        </div>
+        <p style="color: var(--gray); margin-top: 2rem; font-size: 0.9rem;">© 2026 Protein Levine. All rights reserved. Zero Excuses.</p>
+    </footer>
+</body>
+</html>
